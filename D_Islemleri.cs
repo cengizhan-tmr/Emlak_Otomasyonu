@@ -9,7 +9,7 @@ namespace emlak
 
         public static void DosyaIdBelirleme()
         {
-            FileStream fs = new FileStream(@"C:\Users\cengi\Desktop\Yeni klasör (3)\emlak\satilik.txt", FileMode.Open, FileAccess.Read);
+            FileStream fs = new FileStream(@"C:\Users\cengi\Desktop\Emlak_App\emlak\satilik.txt", FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
             string yazi = sr.ReadLine();
 
@@ -23,7 +23,7 @@ namespace emlak
             fs.Close();
 
 
-            fs = new FileStream(@"C:\Users\cengi\Desktop\Yeni klasör (3)\emlak\kiralik.txt", FileMode.Open, FileAccess.Read);
+            fs = new FileStream(@"C:\Users\cengi\Desktop\Emlak_App\emlak\kiralik.txt", FileMode.Open, FileAccess.Read);
             sr = new StreamReader(fs);
             yazi = sr.ReadLine();
             while (yazi != null)
@@ -54,6 +54,7 @@ namespace emlak
             return kullanicilar;
         }
              
+
 
         public static void DosyaYazma(string dosya_yolu, List<Kullanici> kullanicilar)
         {
@@ -88,6 +89,7 @@ namespace emlak
             fs.Close();
             return semtler;
         }
+
         public static void DosyaSatilikYazmak(string dosya_yolu, string durum)
         {
             if (!File.Exists(dosya_yolu))
@@ -113,11 +115,11 @@ namespace emlak
         public static List<SatilikEv> DosyaSatilikEvOkuma()
         {
             List<SatilikEv> evler = new List<SatilikEv>();
-            string dosya_yolu = @"C:\Users\cengi\Desktop\Yeni klasör (3)\emlak\satilik.txt";
+            string dosya_yolu = @"C:\Users\cengi\Desktop\Emlak_App\emlak\satilik.txt";
 
             if (!File.Exists(dosya_yolu))
             {
-                Console.WriteLine("Satılık Dosya Bulunamadı");
+                MessageBox.Show("Satılık Dosya Bulunamadı");
                 return evler; // Dosya yoksa boş liste döndür
             }
 
@@ -131,9 +133,8 @@ namespace emlak
 
                     if (dosya.Length != 10)
                     {
-                        Console.WriteLine("Veri formatı hatalı: " + yazi);
-                        MessageBox.Show("ada");
-                        continue; // Hatalı veriyi atla
+                        MessageBox.Show("Veri formatı hatalı: " + yazi);
+                        continue; 
                     }
 
                     try
@@ -181,15 +182,19 @@ namespace emlak
             {
                 if (ev.turu.Equals("kiralik"))
                 {
-                    sw.WriteLine(ev.EmlakNumarasi + "|" + ev.il + "|" + ev.ilce + "|" + ev.KatNumarasi + "|" + ev.Alan +"|"+ ev.OdaSayisi + "|" + ev.Tip +
-                  "|" + ev.turu + "|" +ev.Yasi + "|" + ev.Kira +"|"+ ev.Depozito);
-
-
-
-                   
+                    sw.WriteLine(ev.EmlakNumarasi + "|"
+                        +ev.il + "|" 
+                        +ev.ilce + "|"
+                        +ev.KatNumarasi + "|"
+                        +ev.Alan +"|"
+                        +ev.OdaSayisi + "|"
+                        +ev.Tip +"|"
+                        +ev.turu + "|"
+                        +ev.Yasi + "|" 
+                        +ev.Kira +"|"
+                        +ev.Depozito);
                 }
             }
-
             sw.Close();
             fs.Close();
         }
@@ -198,7 +203,7 @@ namespace emlak
         public static List<KiralikEv> DosyaKiralikEvOkuma()
         {
             List<KiralikEv> evler = new List<KiralikEv>();
-            string dosya_yolu = @"C:\Users\cengi\Desktop\Yeni klasör (3)\emlak\kiralik.txt";
+            string dosya_yolu = @"C:\Users\cengi\Desktop\Emlak_App\emlak\kiralik.txt";
 
             if (!File.Exists(dosya_yolu))
             {
@@ -216,8 +221,7 @@ namespace emlak
 
                         if (dosya.Length != 11)
                         {
-                            Console.WriteLine("Veri formatı hatalı: " + yazi);
-                            MessageBox.Show("Veri formatı ");
+                            MessageBox.Show("Veri formatı hatalı: " + yazi);
                             continue; // Hatalı veriyi atla
                         }
 
@@ -250,6 +254,7 @@ namespace emlak
             }
             return evler;
         }
+
 
         public static void DosyadanSatirSil(string dosyaYolu, decimal emlakNumarasi)
         {

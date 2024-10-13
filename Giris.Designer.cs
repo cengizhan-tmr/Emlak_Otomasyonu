@@ -71,6 +71,7 @@ namespace emlak
             // 
             Sifre.Location = new Point(176, 87);
             Sifre.Name = "Sifre";
+            Sifre.PasswordChar = '*';
             Sifre.Size = new Size(194, 27);
             Sifre.TabIndex = 4;
             Sifre.TextChanged += Sifre_TextChanged;

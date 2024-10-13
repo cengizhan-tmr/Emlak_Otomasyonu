@@ -31,7 +31,7 @@ namespace emlak
 
         private void giris_button_Click(object sender, EventArgs e)
         {
-            string dosya_yolu = @"C:\Users\cengi\Desktop\Yeni klasör (3)\emlak\kullanicilar.txt";
+            string dosya_yolu = @"C:\Users\cengi\Desktop\Emlak_App\emlak\kullanicilar.txt";
             if (!File.Exists(dosya_yolu))
             {
                 MessageBox.Show("Kullanıcı Dosyası Bulunmuyor. Öncelikle Kullanıcı Ekleyiniz");
@@ -68,16 +68,13 @@ namespace emlak
 
         private void yeni_kayit_Click(object sender, EventArgs e)
         {
-            string dosya_yolu = @"C:\Users\cengi\Desktop\Yeni klasör (3)\emlak\kullanicilar.txt";
+            string dosya_yolu = @"C:\Users\cengi\Desktop\Emlak_App\emlak\kullanicilar.txt";
 
-            // Dosyanın varlığını kontrol et
             if (!File.Exists(dosya_yolu))
             {
                 MessageBox.Show("Kullanıcı Dosyası Bulunmuyor. Öncelikle Kullanıcı Ekleyiniz");
                 return;
             }
-
-            // Kullanıcı adı ve şifrenin boş olup olmadığını kontrol et
             string kullaniciAdi = Kullanici_Adi.Text;
             string sifre = Sifre.Text;
 
@@ -87,10 +84,8 @@ namespace emlak
                 return;
             }
 
-            // Kullanıcı listesini oku
             List<Kullanici> kullanicilar = D_Islemleri.DosyaOkuma(dosya_yolu);
 
-            // Aynı kullanıcı adının var olup olmadığını kontrol et
             foreach (Kullanici kullanici in kullanicilar)
             {
                 if (kullanici.Kullanici_Adi.Equals(kullaniciAdi, StringComparison.OrdinalIgnoreCase))
@@ -100,10 +95,8 @@ namespace emlak
                 }
             }
 
-            // Yeni kullanıcıyı listeye ekle
             kullanicilar.Add(new Kullanici(kullaniciAdi, sifre));
 
-            // Güncellenmiş listeyi dosyaya yaz
             D_Islemleri.DosyaYazma(dosya_yolu, kullanicilar);
 
             MessageBox.Show("Yeni kullanıcı başarıyla kaydedildi.");

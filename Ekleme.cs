@@ -27,7 +27,7 @@ namespace emlak
         private void IL_SelectedValueChanged(object sender, EventArgs e)
         {
             Ev.sehir = (IL.SelectedIndex) + 1;
-            string dosya_yolu = @"C:\Users\cengi\Desktop\Yeni klasör (3)\emlak\semtler.txt";
+            string dosya_yolu = @"C:\Users\cengi\Desktop\Emlak_App\emlak\semtler.txt";
             if (!File.Exists(dosya_yolu))
             {
                 MessageBox.Show("Semt Dosyası Bulunmuyor");
@@ -63,7 +63,7 @@ namespace emlak
 
             tFiyat.Text = Fiyat.ToString();
             Yapim.Text = yasi.ToString();
-            FileStream fs = new FileStream(@"C:\Users\cengi\Desktop\Yeni klasör (3)\emlak\room.txt", FileMode.Open, FileAccess.Read);
+            FileStream fs = new FileStream(@"C:\Users\cengi\Desktop\Emlak_App\emlak\room.txt", FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
             string yazi = sr.ReadLine();
             int i = 0;
@@ -184,9 +184,9 @@ namespace emlak
                         IL.Text, ILCE.Text, int.Parse(Kat_Numarasi.Text), int.Parse(tAlan.Text), int.Parse(Oda_Sayisi.Text), Ev_Turu.Text, "satilik",
                         int.Parse(Yapim.Text), int.Parse(tFiyat.Text));
                     Ev.evler.Add(satilikEv);
+                    string dosya_yolu = @"C:\Users\cengi\Desktop\Emlak_App\emlak\satilik.txt";
+                    D_Islemleri.DosyaSatilikYazmak(dosya_yolu,"satilik");
                     MessageBox.Show("Satılık Ev Kayıt Edildi");
-                    string dosya_yolu = @"C:\Users\cengi\Desktop\Yeni klasör (3)\emlak\satilik.txt";
-                    D_Islemleri.DosyaSatilikYazmak(dosya_yolu, "satilik");
                     this.Close();
                 }
 
@@ -197,7 +197,7 @@ namespace emlak
                         ILCE.Text, int.Parse(Kat_Numarasi.Text), int.Parse(tAlan.Text), int.Parse(Oda_Sayisi.Text), Ev_Turu.Text, "kiralik", int.Parse(Yapim.Text), decimal.Parse(Kira.Text), decimal.Parse(tDepozito.Text));
                     Ev.evler.Add(kiralikEv);
                     MessageBox.Show("Kiralık Ev Kayıt Edildi");
-                    string dosya_yolu = @"C:\Users\cengi\Desktop\Yeni klasör (3)\emlak\kiralik.txt";
+                    string dosya_yolu = @"C:\Users\cengi\Desktop\Emlak_App\emlak\kiralik.txt";
 
                     D_Islemleri.DosyaKiralikEvYazmak(dosya_yolu, "kiralik");
                 }
@@ -235,6 +235,11 @@ namespace emlak
         }
 
         private void Yapim_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Kira_TextChanged(object sender, EventArgs e)
         {
 
         }

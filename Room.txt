@@ -1,4 +1,0 @@
-Daire|100
-Bahçeli|200
-Dubleks|150
-Mustakil|300

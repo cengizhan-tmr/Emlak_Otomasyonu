@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace emlak
 {
@@ -16,6 +17,7 @@ namespace emlak
         public sorgu()
         {
             InitializeComponent();
+
         }
 
         private void sorgu_Load(object sender, EventArgs e)
@@ -35,7 +37,7 @@ namespace emlak
         private void cb_il_SelectedValueChanged(object sender, EventArgs e)
         {
             Ev.sehir = (cb_il.SelectedIndex) + 1;
-            string dosya_yolu = @"C:\Users\cengi\Desktop\Yeni klasör (3)\emlak\semtler.txt";
+            string dosya_yolu = @"C:\Users\cengi\Desktop\Emlak_App\emlak\semtler.txt";
             if (!File.Exists(dosya_yolu))
             {
                 MessageBox.Show("Semt Dosyası Bulunmuyor");
@@ -100,6 +102,8 @@ namespace emlak
                 if (!dataGridView1.Columns.Contains("Depozito"))
                 {
                     dataGridView1.Columns.Add("Depozito", "Depozito");
+                    dataGridView1.Columns["Fiyat"].HeaderText = "Kira";
+
                 }
 
                 foreach (KiralikEv ev in evler)
@@ -175,8 +179,8 @@ namespace emlak
 
         private void SilBtn_Click(object sender, EventArgs e)
         {
-            string Sat_Dosya_yolu = @"C:\Users\cengi\Desktop\Yeni klasör (3)\emlak\satilik.txt";
-            string Kira_Dosya_Yolu = @"C:\Users\cengi\Desktop\Yeni klasör (3)\emlak\kiralik.txt";
+            string Sat_Dosya_yolu = @"C:\Users\cengi\Desktop\Emlak_App\emlak\satilik.txt";
+            string Kira_Dosya_Yolu = @"C:\Users\cengi\Desktop\Emlak_App\emlak\kiralik.txt";
             string deger = dataGridView1.CurrentRow.Cells["EmlakNumarasi"].Value.ToString();
             decimal emlakNumarasi = decimal.Parse(deger);
 
@@ -188,7 +192,7 @@ namespace emlak
 
                 if (silinecekEv.turu.Equals("satilik"))
                 {
-                   D_Islemleri.DosyadanSatirSil(Sat_Dosya_yolu, emlakNumarasi);
+                    D_Islemleri.DosyadanSatirSil(Sat_Dosya_yolu, emlakNumarasi);
                 }
                 else
                 {
@@ -197,7 +201,7 @@ namespace emlak
 
                 // DataGridView'i güncelle
                 dataGridView1.DataSource = null; // Veri kaynağını temizle
-                dataGridView1.DataSource = Ev.evler; // Güncel veri kaynağını ata
+                dataGridView1.DataSource = new BindingList<Ev>(Ev.evler); // Güncel veri kaynağını ata
                 MessageBox.Show("Silindi");
             }
             else
@@ -206,7 +210,7 @@ namespace emlak
             }
         }
 
-       
+
 
 
     }

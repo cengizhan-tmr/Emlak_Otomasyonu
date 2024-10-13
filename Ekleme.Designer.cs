@@ -62,7 +62,7 @@ namespace emlak
             label1.Location = new Point(18, 58);
             label1.Name = "label1";
             label1.Size = new Size(28, 28);
-            label1.TabIndex = 0;
+            label1.TabIndex = 22;
             label1.Text = "İL";
             label1.Click += label1_Click;
             // 
@@ -73,7 +73,7 @@ namespace emlak
             label2.Location = new Point(18, 108);
             label2.Name = "label2";
             label2.Size = new Size(51, 28);
-            label2.TabIndex = 1;
+            label2.TabIndex = 21;
             label2.Text = "İLÇE";
             label2.Click += label2_Click;
             // 
@@ -85,7 +85,7 @@ namespace emlak
             IL.Location = new Point(159, 58);
             IL.Name = "IL";
             IL.Size = new Size(151, 28);
-            IL.TabIndex = 0;
+            IL.TabIndex = 1;
             IL.SelectedIndexChanged += IL_SelectedIndexChanged;
             IL.SelectedValueChanged += IL_SelectedValueChanged;
             // 
@@ -96,7 +96,7 @@ namespace emlak
             ILCE.Location = new Point(159, 108);
             ILCE.Name = "ILCE";
             ILCE.Size = new Size(151, 28);
-            ILCE.TabIndex = 3;
+            ILCE.TabIndex = 2;
             // 
             // label3
             // 
@@ -105,7 +105,7 @@ namespace emlak
             label3.Location = new Point(147, 9);
             label3.Name = "label3";
             label3.Size = new Size(370, 31);
-            label3.TabIndex = 4;
+            label3.TabIndex = 20;
             label3.Text = "Emlak uygulamasına hoş geldiniz";
             // 
             // label4
@@ -115,7 +115,7 @@ namespace emlak
             label4.Location = new Point(18, 154);
             label4.Name = "label4";
             label4.Size = new Size(100, 28);
-            label4.TabIndex = 5;
+            label4.TabIndex = 19;
             label4.Text = "Alan(M2)";
             label4.Click += label4_Click;
             // 
@@ -124,7 +124,7 @@ namespace emlak
             tAlan.Location = new Point(159, 158);
             tAlan.Name = "tAlan";
             tAlan.Size = new Size(151, 27);
-            tAlan.TabIndex = 6;
+            tAlan.TabIndex = 3;
             tAlan.KeyPress += KeyPress;
             // 
             // label5
@@ -134,7 +134,7 @@ namespace emlak
             label5.Location = new Point(334, 158);
             label5.Name = "label5";
             label5.Size = new Size(110, 28);
-            label5.TabIndex = 7;
+            label5.TabIndex = 18;
             label5.Text = "Oda Sayısı";
             // 
             // label6
@@ -144,7 +144,7 @@ namespace emlak
             label6.Location = new Point(334, 58);
             label6.Name = "label6";
             label6.Size = new Size(141, 28);
-            label6.TabIndex = 9;
+            label6.TabIndex = 17;
             label6.Text = "Kat Numarası";
             // 
             // Yapim
@@ -152,7 +152,7 @@ namespace emlak
             Yapim.Location = new Point(481, 112);
             Yapim.Name = "Yapim";
             Yapim.Size = new Size(151, 27);
-            Yapim.TabIndex = 12;
+            Yapim.TabIndex = 9;
             Yapim.TextChanged += Yapim_TextChanged;
             Yapim.KeyPress += KeyPress;
             // 
@@ -163,16 +163,16 @@ namespace emlak
             label7.Location = new Point(334, 111);
             label7.Name = "label7";
             label7.Size = new Size(96, 28);
-            label7.TabIndex = 11;
+            label7.TabIndex = 16;
             label7.Text = "Bina Yaşı";
             label7.Click += label7_Click;
             // 
             // tFiyat
             // 
-            tFiyat.Location = new Point(159, 255);
+            tFiyat.Location = new Point(159, 257);
             tFiyat.Name = "tFiyat";
             tFiyat.Size = new Size(151, 27);
-            tFiyat.TabIndex = 14;
+            tFiyat.TabIndex = 5;
             tFiyat.Visible = false;
             tFiyat.KeyPress += KeyPress;
             // 
@@ -180,10 +180,10 @@ namespace emlak
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label8.Location = new Point(18, 255);
+            label8.Location = new Point(19, 256);
             label8.Name = "label8";
             label8.Size = new Size(58, 28);
-            label8.TabIndex = 13;
+            label8.TabIndex = 15;
             label8.Text = "Fiyat";
             label8.Visible = false;
             // 
@@ -194,7 +194,7 @@ namespace emlak
             Ev_Turu.Location = new Point(481, 207);
             Ev_Turu.Name = "Ev_Turu";
             Ev_Turu.Size = new Size(151, 28);
-            Ev_Turu.TabIndex = 16;
+            Ev_Turu.TabIndex = 11;
             Ev_Turu.SelectedIndexChanged += Ev_Turu_SelectedIndexChanged;
             // 
             // label9
@@ -204,7 +204,7 @@ namespace emlak
             label9.Location = new Point(334, 207);
             label9.Name = "label9";
             label9.Size = new Size(83, 28);
-            label9.TabIndex = 15;
+            label9.TabIndex = 14;
             label9.Text = "Ev Türü";
             // 
             // Satilik
@@ -214,7 +214,7 @@ namespace emlak
             Satilik.Location = new Point(18, 205);
             Satilik.Name = "Satilik";
             Satilik.Size = new Size(98, 32);
-            Satilik.TabIndex = 17;
+            Satilik.TabIndex = 4;
             Satilik.TabStop = true;
             Satilik.Text = "Satılık ";
             Satilik.UseVisualStyleBackColor = true;
@@ -227,7 +227,7 @@ namespace emlak
             Kiralik.Location = new Point(159, 207);
             Kiralik.Name = "Kiralik";
             Kiralik.Size = new Size(94, 32);
-            Kiralik.TabIndex = 18;
+            Kiralik.TabIndex = 5;
             Kiralik.TabStop = true;
             Kiralik.Text = "Kiralık";
             Kiralik.UseVisualStyleBackColor = true;
@@ -238,7 +238,7 @@ namespace emlak
             Kaydet.Location = new Point(481, 295);
             Kaydet.Name = "Kaydet";
             Kaydet.Size = new Size(151, 50);
-            Kaydet.TabIndex = 19;
+            Kaydet.TabIndex = 13;
             Kaydet.Text = "Kaydet";
             Kaydet.UseVisualStyleBackColor = true;
             Kaydet.Click += Kaydet_Click;
@@ -248,7 +248,7 @@ namespace emlak
             Kat_Numarasi.Location = new Point(481, 62);
             Kat_Numarasi.Name = "Kat_Numarasi";
             Kat_Numarasi.Size = new Size(151, 27);
-            Kat_Numarasi.TabIndex = 20;
+            Kat_Numarasi.TabIndex = 8;
             Kat_Numarasi.KeyPress += KeyPress;
             // 
             // Oda_Sayisi
@@ -256,36 +256,37 @@ namespace emlak
             Oda_Sayisi.Location = new Point(481, 162);
             Oda_Sayisi.Name = "Oda_Sayisi";
             Oda_Sayisi.Size = new Size(151, 27);
-            Oda_Sayisi.TabIndex = 21;
+            Oda_Sayisi.TabIndex = 10;
             Oda_Sayisi.KeyPress += KeyPress;
             // 
             // tDepozito
             // 
-            tDepozito.Location = new Point(159, 256);
+            tDepozito.Location = new Point(159, 257);
             tDepozito.Name = "tDepozito";
             tDepozito.Size = new Size(151, 27);
-            tDepozito.TabIndex = 23;
+            tDepozito.TabIndex = 8;
             tDepozito.Visible = false;
             tDepozito.TextChanged += textBox1_TextChanged;
             tDepozito.KeyPress += KeyPress;
             // 
             // Kira
             // 
-            Kira.Location = new Point(159, 305);
+            Kira.Location = new Point(159, 303);
             Kira.Name = "Kira";
             Kira.Size = new Size(151, 27);
-            Kira.TabIndex = 25;
+            Kira.TabIndex = 7;
             Kira.Visible = false;
+            Kira.TextChanged += Kira_TextChanged;
             Kira.KeyPress += KeyPress;
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label10.Location = new Point(18, 305);
+            label10.Location = new Point(27, 303);
             label10.Name = "label10";
             label10.Size = new Size(50, 28);
-            label10.TabIndex = 24;
+            label10.TabIndex = 13;
             label10.Text = "Kira";
             label10.Visible = false;
             // 
@@ -294,7 +295,7 @@ namespace emlak
             Geri.Location = new Point(324, 295);
             Geri.Name = "Geri";
             Geri.Size = new Size(151, 50);
-            Geri.TabIndex = 26;
+            Geri.TabIndex = 12;
             Geri.Text = "Geri";
             Geri.UseVisualStyleBackColor = true;
             Geri.Click += Geri_Click;

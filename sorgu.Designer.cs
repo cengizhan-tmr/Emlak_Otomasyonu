@@ -135,7 +135,7 @@
             dataGridView1.Location = new Point(2, 140);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1491, 346);
+            dataGridView1.Size = new Size(1579, 346);
             dataGridView1.TabIndex = 6;
             // 
             // EmlakNumarasi
@@ -252,7 +252,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1491, 485);
+            ClientSize = new Size(1634, 485);
             Controls.Add(SilBtn);
             Controls.Add(Duzenle);
             Controls.Add(Ana_Menü);
